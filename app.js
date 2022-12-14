@@ -1,14 +1,15 @@
-// boolean -> true / false
-const amIFat = false;
-console.log(amIFat);
+// with array
+const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+console.log(daysOfWeek);
 
-// null -> undefined (x), defined (0)
-// defined by 'nothing inside' 
-const IAmFat = null;
-console.log(IAmFat)
+// Get item from array
+console.log(daysOfWeek[4])
 
-// undefined -> literally not defined
-let something;
-console.log(something);
+// Add one more day to the array
+daysOfWeek.push("Sun")
+console.log(daysOfWeek)
 
-// null -> to specify that there is 'nothing' in this variable
+// use of example
+const toBuy = ["Potato", "tomato", "Ramen"];
+toBuy.push("chicken")
+console.log(toBuy)
