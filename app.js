@@ -1,15 +1,21 @@
-// with array
-const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-console.log(daysOfWeek);
+// how to declare an object
+const player = {
+    name: 'kurooru',
+    point: 10,
+    fat: true,   
+};
 
-// Get item from array
-console.log(daysOfWeek[4])
+// print
+console.log(player);
+console.log(player.name);
+console.log(player['name']);
 
-// Add one more day to the array
-daysOfWeek.push("Sun")
-console.log(daysOfWeek)
+// update
+player.fat = false;
+console.log(player.fat)
+// we can't modify const
+// but it is possible to update something 'inside' of const
 
-// use of example
-const toBuy = ["Potato", "tomato", "Ramen"];
-toBuy.push("chicken")
-console.log(toBuy)
+// add
+player.lastName = 'Yang';
+console.log(player.lastName);
