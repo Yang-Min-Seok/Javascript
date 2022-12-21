@@ -1,10 +1,12 @@
 const loginForm = document.querySelector('#login-form');
-const loginInput = loginForm.querySelector('input');
-const loginButton = loginForm.querySelector('button');
+const loginInput = document.querySelector('#login-form input');
 
-function onLoginBtnClick() {
-    const username = loginInput.value;
-    console.log(username)
+function onLoginSubmit(event) {
+    // avoid refreshing (Default)
+    event.preventDefault();
+    console.log(loginInput.value);
 };
 
-loginButton.addEventListener('click', onLoginBtnClick)
+loginForm.addEventListener('submit', onLoginSubmit);
+
+// JS calls function with some "information"
