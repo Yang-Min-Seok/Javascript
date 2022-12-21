@@ -1,5 +1,6 @@
 const loginForm = document.querySelector('#login-form');
 const loginInput = document.querySelector('#login-form input');
+const link =document.querySelector('a');
 
 function onLoginSubmit(event) {
     // avoid refreshing (Default)
@@ -8,5 +9,4 @@ function onLoginSubmit(event) {
 };
 
 loginForm.addEventListener('submit', onLoginSubmit);
-
-// JS calls function with some "information"
+// JS calls function with some "information(arguments)"
