@@ -7,16 +7,19 @@ let toDos = [];
 
 function saveToDos() {
     // JSON.stringify -> makes everything str
-    localStorage.setItem('todos', JSON.stringify(toDos));
+    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
 function deleteToDo(event) {
     // target -> clicked element
     // the parent of btn is li
     const li = event.target.parentElement;
-    console.log(li.id)
     // delete
-    li.remove()
+    li.remove();
+    // filter toDos
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+    // saveTodos again
+    saveToDos();
 }
 
 function paintToDo(newTodo) {
