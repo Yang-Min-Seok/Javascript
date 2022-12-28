@@ -14,6 +14,7 @@ function deleteToDo(event) {
     // target -> clicked element
     // the parent of btn is li
     const li = event.target.parentElement;
+    console.log(li.id)
     // delete
     li.remove()
 }
@@ -22,8 +23,9 @@ function paintToDo(newTodo) {
     
     // create new element(HTML)
     const li = document.createElement('li');
+    li.id = newTodo.id;
     const span = document.createElement('span');
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     const btn = document.createElement('button');
     btn.innerText = 'X';
     btn.addEventListener('click', deleteToDo);
@@ -48,10 +50,13 @@ function handleToDoSubmit(event) {
     // make input box empty
     toDoInput.value = "";
 
+    const newTodoObj = {
+        text: newTodo,
+        id: Date.now(),
+    }
     // push value into list
-    toDos.push(newTodo);
-
-    paintToDo(newTodo);
+    toDos.push(newTodoObj);
+    paintToDo(newTodoObj);
 
     // save Todo to localstorage
     saveToDos()
