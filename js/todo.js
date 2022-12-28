@@ -2,7 +2,8 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 const TODOS_KEY = 'todos';
-const toDos = [];
+
+let toDos = [];
 
 function saveToDos() {
     // JSON.stringify -> makes everything str
@@ -60,9 +61,11 @@ function handleToDoSubmit(event) {
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
-if(saveToDos){
+
+if (savedToDos !== null){
     // make str to list
     const parsedToDos = JSON.parse(savedToDos);
-    // arrow function
-    parsedToDos.forEach((item) => console.log(`This is the turn of ${item}`));
+    toDos = parsedToDos;
+    // send items to paintToDo(function)
+    parsedToDos.forEach(paintToDo);
 }
